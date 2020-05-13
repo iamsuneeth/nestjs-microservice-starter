@@ -1,0 +1,120 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/service-gateway/src",
+  "monorepo": true,
+  "root": "apps/service-gateway",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/service-gateway/tsconfig.app.json",
+    "assets": [
+      {
+        "include": "**/*.proto"
+      },
+      {
+        "include": "*.proto"
+      },
+      {
+        "include": "../libs/proto/src/proto/*.proto",
+        "outDir": "dist"
+      }
+    ],
+    "watchAssets": true,
+    "plugins": [
+      {
+        "name": "@nestjs/graphql/plugin",
+        "options": {
+          "typeFileNameSuffix": [
+            ".input.ts",
+            ".args.ts",
+            ".model.ts",
+            ".type.ts",
+            ".enum.ts"
+          ]
+        }
+      }
+    ]
+  },
+  "projects": {
+    "service-gateway": {
+      "type": "application",
+      "root": "apps/service-gateway",
+      "entryFile": "main",
+      "sourceRoot": "apps/service-gateway/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/service-gateway/tsconfig.app.json"
+      }
+    },
+    "service-user": {
+      "type": "application",
+      "root": "apps/service-user",
+      "entryFile": "main",
+      "sourceRoot": "apps/service-user/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/service-user/tsconfig.app.json"
+      }
+    },
+    "infra": {
+      "type": "library",
+      "root": "libs/infra",
+      "entryFile": "index",
+      "sourceRoot": "libs/infra/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/infra/tsconfig.lib.json"
+      }
+    },
+    "grpc": {
+      "type": "library",
+      "root": "libs/grpc",
+      "entryFile": "index",
+      "sourceRoot": "libs/grpc/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/grpc/tsconfig.lib.json"
+      }
+    },
+    "service-email": {
+      "type": "application",
+      "root": "apps/service-email",
+      "entryFile": "main",
+      "sourceRoot": "apps/service-email/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/service-email/tsconfig.app.json"
+      }
+    },
+    "common": {
+      "type": "library",
+      "root": "libs/common",
+      "entryFile": "index",
+      "sourceRoot": "libs/common/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/common/tsconfig.lib.json"
+      }
+    },
+    "orm": {
+      "type": "library",
+      "root": "libs/orm",
+      "entryFile": "index",
+      "sourceRoot": "libs/orm/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/orm/tsconfig.lib.json"
+      }
+    },
+    "db": {
+      "type": "library",
+      "root": "libs/db",
+      "entryFile": "index",
+      "sourceRoot": "libs/db/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/db/tsconfig.lib.json"
+      }
+    },
+    "proto": {
+      "type": "library",
+      "root": "libs/proto",
+      "entryFile": "index",
+      "sourceRoot": "libs/proto/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/proto/tsconfig.lib.json"
+      }
+    }
+  }
+}
