@@ -20,7 +20,7 @@ const mailGenerator = new Mailgen({
 export class SendGridAdapter extends EmailAdapter {
   constructor(private readonly config: ConfigService) {
     super();
-    sgMail.setApiKey(config.get('SENDGRID_API_KEY'));
+    sgMail.setApiKey(config.get('sendgrid_api_key'));
   }
   async sendMail(data: EmailAdapterRequest) {
     const emailText = mailGenerator.generate(data.emailBody);

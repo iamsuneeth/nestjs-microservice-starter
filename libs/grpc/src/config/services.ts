@@ -1,7 +1,7 @@
 import { join } from 'path';
 import { serviceConstants } from '@app/common';
 
-const pathToProto = '../../libs/proto/proto';
+const pathToProto = '../../proto/';
 
 export const grpcServiceList = {
   [serviceConstants.user.package]: {

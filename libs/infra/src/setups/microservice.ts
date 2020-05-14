@@ -7,7 +7,7 @@ import { RequestInterceptor } from '../interceptors/grpc-request-interceptor';
 import { externalConfig, serviceConfig } from '../constants';
 import { join } from 'path';
 
-const pathToProto = '../../libs/proto/proto';
+const pathToProto = '../../proto/';
 
 const getOptions = (
   type: Transport,
@@ -19,7 +19,7 @@ const getOptions = (
       const urls = config.get(externalConfig.rmq.url);
       const queue = config.get(externalConfig.rmq.queueName);
       return {
-        urls,
+        urls: urls.split(','),
         queue,
         queueOptions: {
           durable: false,

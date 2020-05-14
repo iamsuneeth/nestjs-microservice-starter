@@ -13,7 +13,7 @@ import { serviceConstants } from '../../constants/services';
         return ClientProxyFactory.create({
           transport: Transport.RMQ,
           options: {
-            urls,
+            urls: urls.split(','),
             queue,
             queueOptions: {
               durable: false,

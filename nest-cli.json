@@ -14,7 +14,7 @@
         "include": "*.proto"
       },
       {
-        "include": "../libs/proto/src/proto/*.proto",
+        "include": "../../../libs/proto/src/proto/*.proto",
         "outDir": "dist"
       }
     ],

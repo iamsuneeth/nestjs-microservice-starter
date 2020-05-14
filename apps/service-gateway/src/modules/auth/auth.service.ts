@@ -1,4 +1,9 @@
-import { Injectable, UnauthorizedException, Inject } from '@nestjs/common';
+import {
+  Injectable,
+  UnauthorizedException,
+  Inject,
+  Logger,
+} from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { GrpcClientProvider } from '@app/grpc';
 import { ConfigService } from '@nestjs/config';
@@ -48,14 +53,17 @@ export class AuthService {
     if (user) {
       //send email link
       const token = await this.generateJWT(user);
-      this.emailServiceClient.send('email', {
-        templateId: 'email',
+      const obs = this.emailServiceClient.send('email', {
+        templateId: 'login',
         dictionary: {
           userName: user.firstName,
           validationUrl: this.generateValidationUrl(token),
         },
         to: email,
         subject: 'login',
+      });
+      obs.subscribe(ob => {
+        Logger.log(ob, 'email service response');
       });
 
       return {

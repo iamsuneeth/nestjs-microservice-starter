@@ -7,7 +7,6 @@ import { SendGridAdapter } from './ext-api-impl/sendgrid.adapter';
 
 @Module({
   imports: [RootModule],
-
   controllers: [AppController],
   providers: [
     AppService,
