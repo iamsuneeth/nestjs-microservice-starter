@@ -9,4 +9,9 @@ export const serviceConstants = {
     service: 'EmailService',
     package: 'email',
   },
+  role: {
+    name: 'Role',
+    service: 'RoleService',
+    package: 'role',
+  },
 };

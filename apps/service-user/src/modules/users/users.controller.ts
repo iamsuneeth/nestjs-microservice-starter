@@ -6,26 +6,27 @@ import { GrpcMethod, RpcException } from '@nestjs/microservices';
 import { SearchUserRequest } from './dto/search-user.request.dto';
 import { UserListResponse } from './dto/user-list.dto';
 import { status } from 'grpc';
-import { AuthGuard } from '@app/common';
+import { MsAuthGuard } from '@app/common';
+import { UserDto } from './dto/user.dto';
 
 @Controller('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
   @GrpcMethod('UserService', 'createUser')
-  @UseGuards(AuthGuard)
+  @UseGuards(MsAuthGuard)
   create(createUserDto: CreateUserDto): Promise<User> {
     return this.usersService.create(createUserDto);
   }
 
   @GrpcMethod('UserService', 'searchUser')
-  @UseGuards(AuthGuard)
+  @UseGuards(MsAuthGuard)
   findAll(request: SearchUserRequest): Promise<UserListResponse> {
     return this.usersService.searchUser(request);
   }
 
   @GrpcMethod('UserService', 'findById')
-  @UseGuards(AuthGuard)
+  @UseGuards(MsAuthGuard)
   findById({ id }): Promise<User> {
     return this.usersService.findOne(id);
   }
@@ -43,13 +44,13 @@ export class UsersController {
   }
 
   @GrpcMethod('UserService', 'currentUser')
-  @UseGuards(AuthGuard)
-  getCurrentUser(): Promise<User> {
+  @UseGuards(MsAuthGuard)
+  getCurrentUser(): Promise<UserDto> {
     return this.usersService.getCurrentUser();
   }
 
   @GrpcMethod('UserService', 'deleteUser')
-  @UseGuards(AuthGuard)
+  @UseGuards(MsAuthGuard)
   remove(id: string): Promise<void> {
     return this.usersService.remove(id);
   }

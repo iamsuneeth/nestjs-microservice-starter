@@ -14,11 +14,11 @@ export function authSetup(app: INestApplication) {
     .getClient(clientConfig.sessionClient, 'redis');
   const config = app.get(ConfigService);
   const sessionMiddleware = session({
-    resave: true,
-    rolling: true,
+    resave: false,
     saveUninitialized: false,
     cookie: {
       secure: config.get(gateWayConfig.protocol) === 'https',
+      httpOnly: config.get(gateWayConfig.protocol) === 'https',
     },
     name: 'session.main',
     store:
@@ -26,7 +26,6 @@ export function authSetup(app: INestApplication) {
         ? undefined
         : new RedisStore({ client }),
     secret: config.get(gateWayConfig.session.secret),
-    unset: 'destroy',
   });
 
   app.use(sessionMiddleware);

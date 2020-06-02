@@ -3,10 +3,10 @@ import { UseGuards } from '@nestjs/common';
 
 import { ProfileService } from './profile.service';
 import { UserProfile } from './types/profile.model';
-import { GqlAuthGuardGuard } from '../../guards/gql-auth.guard';
+import { GqlAuthGuard } from '../../guards/gql-auth.guard';
 
 @Resolver(() => UserProfile)
-@UseGuards(GqlAuthGuardGuard)
+@UseGuards(GqlAuthGuard)
 export class ProfileResolver {
   constructor(private readonly profileService: ProfileService) {}
 

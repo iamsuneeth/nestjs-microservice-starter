@@ -115,6 +115,15 @@
       "compilerOptions": {
         "tsConfigPath": "libs/proto/tsconfig.lib.json"
       }
+    },
+    "service-role": {
+      "type": "application",
+      "root": "apps/service-role",
+      "entryFile": "main",
+      "sourceRoot": "apps/service-role/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/service-role/tsconfig.app.json"
+      }
     }
   }
 }

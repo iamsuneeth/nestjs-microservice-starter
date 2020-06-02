@@ -1,13 +1,12 @@
 import { Metadata } from 'grpc';
-
-import { ContextProvider } from '../../../infra/src/providers/context.provider';
+import { ContextProvider } from '@app/infra';
 
 export function setRpcMetadata(args: any[]): any[] {
-  const user = ContextProvider.get('user') as any;
+  const subject = ContextProvider.get('user');
 
   const meta = (args[1] as Metadata) || new Metadata();
-  if (user) {
-    meta.set('authorization', `Bearer ${user.token}`);
+  if (subject) {
+    meta.set('subject', JSON.stringify(subject));
   }
   if (args.length === 0) {
     args = [{}, meta];

@@ -20,14 +20,11 @@ message UserByEmailRequest{
 }
 
 message UserSearchRequest{
-  string email = 1;
-  string firstName = 2;
-  string lastName = 3;
-  int32 partyId = 4;
+  string query = 1;
 }
 
 message UserSearchResponse{
-  bool sent = 1;
+  repeated UserResponse users = 1;
 }
 
 message UserResponse{

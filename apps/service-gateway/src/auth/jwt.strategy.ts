@@ -27,7 +27,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     } else {
       throw new BadRequestException();
     }
-    return { userId: payload.sub };
+    return { id: payload.sub };
   }
 }
 
