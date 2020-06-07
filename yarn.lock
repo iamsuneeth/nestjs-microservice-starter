@@ -1271,9 +1271,9 @@
   integrity sha512-f5j5b/Gf71L+dbqxIpQ4Z2WlmI/mPJ0fOkGGmFgtb6sAu97EPczzbS3/tJKxmcYDj55OX6ssqwDAWOHIYDRDGA==
 
 "@types/object-hash@^1.3.0":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@types/object-hash/-/object-hash-1.3.1.tgz#b8145122b230bad5a13cba52016e78c54dae6ed5"
-  integrity sha512-xhLwbVGAXi/LJEowMjRY1anbF5sQWeuocVjaMrFYy4bOEpl79A4eIby3xlowbkXytUdbISwOZB+vQx9Y/n0p8A==
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/@types/object-hash/-/object-hash-1.3.3.tgz#624ed28222bd5af0f936b162589c06a2b0550161"
+  integrity sha512-75t+H8u2IU1zJPPqezkGLP4YxDlj8tx7H9SgYOT1G61NjJUUEELu1Lp7RKQKXhW+FL8nV7XyD/cNFAtrKGViYQ==
 
 "@types/passport-auth0@^1.0.4":
   version "1.0.4"
@@ -9498,10 +9498,10 @@ ts-poet@^1.0.1:
     lodash "^4.17.15"
     ts-imm "0.4.0"
 
-ts-proto@^1.20.2:
-  version "1.20.2"
-  resolved "https://registry.yarnpkg.com/ts-proto/-/ts-proto-1.20.2.tgz#b68ea3731ec592c0d1024c7d816ee7ad4b1960c4"
-  integrity sha512-gdaOcF9CHZRLBc9sjYy98BSXQc4HWKfGiJvfebSwQ8SPk12mJUPNlJxfDDYKaKz/I2bUTkI6vROEkc0Te59LxA==
+ts-proto@^1.21.3:
+  version "1.21.3"
+  resolved "https://registry.yarnpkg.com/ts-proto/-/ts-proto-1.21.3.tgz#08c7b947d886690d73b8701cc68a520a7384c047"
+  integrity sha512-99k5kCPgln2DJSsni0lF7yKVPnZJPDT4Nw8gaOCx8SfEh9AB4f3roAd9YSCUzYOyP+6CQ2m3qDEHT0KaNzwQkQ==
   dependencies:
     "@types/object-hash" "^1.3.0"
     dataloader "^1.4.0"

@@ -12,7 +12,7 @@ service UserService{
 
 
 message UserByIdRequest{
-  string Id = 1;
+  string id = 1;
 }
 
 message UserByEmailRequest{
@@ -32,6 +32,5 @@ message UserResponse{
   string email = 2;
   string firstName = 3;
   string lastName = 4;
-  int32 partyId = 5;
-  int32 phone = 6;
+  string phone = 5;
 }

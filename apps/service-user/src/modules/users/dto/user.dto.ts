@@ -8,7 +8,7 @@ export class UserDto {
   email: string;
 
   @IsPhoneNumber(null)
-  mobile: string;
+  phone: string;
 
   firstName: string;
 
@@ -20,7 +20,7 @@ export class UserDto {
     userDto.email = user.email;
     userDto.firstName = user.firstName;
     userDto.lastName = user.lastName;
-    userDto.mobile = user.mobile;
+    userDto.phone = user.mobile;
     return userDto;
   }
 }

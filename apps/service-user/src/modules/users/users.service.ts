@@ -22,12 +22,14 @@ export class UsersService {
     return UserListResponse.fromEntity(users);
   }
 
-  findOne(id: string): Promise<User> {
-    return this.userRepo.find({ id });
+  async findOne(id: string): Promise<UserDto> {
+    const user = await this.userRepo.find({ id });
+    return UserDto.fromEntity(user);
   }
 
-  async findByEmail(email: string): Promise<User> {
-    return this.userRepo.find({ email });
+  async findByEmail(email: string): Promise<UserDto> {
+    const user = await this.userRepo.find({ email });
+    return UserDto.fromEntity(user);
   }
 
   async remove(id: string): Promise<void> {
@@ -36,7 +38,6 @@ export class UsersService {
 
   async getCurrentUser(): Promise<UserDto> {
     const { info } = ContextProvider.get('subject') as ISubject;
-    const user = await this.findOne(info.id);
-    return UserDto.fromEntity(user);
+    return await this.findOne(info.id);
   }
 }
