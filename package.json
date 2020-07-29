@@ -39,7 +39,7 @@
     "amqplib": "^0.5.5",
     "apollo-server-express": "^2.13.1",
     "asyncctx": "^2.0.12",
-    "auth0": "^2.25.1",
+    "auth0": "^2.27.1",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.12.2",
     "connect-redis": "^4.0.4",
