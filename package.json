@@ -41,7 +41,7 @@
     "asyncctx": "^2.0.12",
     "auth0": "^2.25.1",
     "class-transformer": "^0.2.3",
-    "class-validator": "^0.12.2",
+    "class-validator": "^0.14.0",
     "connect-redis": "^4.0.4",
     "express-session": "^1.17.1",
     "graphql": "^15.0.0",
